@@ -7,9 +7,10 @@ var radiator = (function($) {
 	};
 
 	function parse(project) {
+		console.log(project);
 		$("#builds").append(
 			$("<div/>")
-				.html("<h3>" + project.DefinitionName + "</h3><span class='time'>" + project.StartTime + "</span>")
+				.html("<h3>" + project.DefinitionName + "</h3><span class='time'>" + jQuery.timeago(project.StartTime) + "</span>")
 				.css("background-color", buildColors[project.Status])
 		);
 	}
